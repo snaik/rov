@@ -1,0 +1,2 @@
+MRN     LastName  FirstName Age    Gender  DateOfBirth Insurance   PhoneNumber     Address Email   NPI
+14986 :De Bernales          :Alannah       :Female     :           :               :505-266-76666  :96 Calle Nortena NE ::

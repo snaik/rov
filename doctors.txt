@@ -1,0 +1,2 @@
+NPI          LicenseNumber  DoctorName                Gender   EntityType       PhoneNumber     StreetAddress                         City              State ZipCode
+1326037400   :Z123456       :Dr. Alexander Wrightson  :MALE    :1-INDIVIDUAL    :4158975211     :300 PROFESSIONAL CENTER DR SUITE 326 :Mountain View    :CA   :94947

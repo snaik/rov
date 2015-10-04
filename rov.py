@@ -5,9 +5,8 @@ import sys
 
 #url for the ga
 
-
+#Start of Initialization
 urlga = 'http://twlatestga.unitysandbox.com'
-
 Svc_username = 'DocAm-0603-RapidOpiat-test'
 Svc_password = 'D!2@9pR@p0daP#9T%vf%w0rt%stdpp'
 Appname      = 'DocAmp.RapidOpiateViewer.TestApp'
@@ -31,12 +30,12 @@ def buildjson(action, appname, ehruserid, patientid, unitytoken,
 # get Unity security token from GetToken endpoint
 def gettoken(username, password):
     u = urllib.parse.urlparse(urlga)
-    
+
     if (u.scheme == 'http'):
         conn = http.client.HTTPConnection(u.hostname)
     elif (u.scheme == 'https'):
         conn = http.client.HTTPSConnection(u.hostname)
-    
+
     conn.request('POST', '/Unity/UnityService.svc/json/GetToken',
              json.dumps({'Username': username, 'Password': password}),
              {'Content-Type': 'application/json'})
@@ -49,7 +48,7 @@ def gettoken(username, password):
 # post action JSON to MagicJson endpoint, get JSON in return
 def unityaction(jsonstr):
     u = urllib.parse.urlparse(urlga)
-    
+
     if (u.scheme == 'http'):
         conn = http.client.HTTPConnection(u.hostname)
     elif (u.scheme == 'https'):
@@ -68,8 +67,11 @@ def unityaction(jsonstr):
 token = gettoken(Svc_username, Svc_password)
 print('Using Unity security token: ' + token)
 
+
+
 # Authenticate EHR user before calling other Magic actions
 jsonstr = buildjson('GetUserAuthentication', Appname, Ehr_username, '', token, Ehr_password)
+print (jsonstr)
 unity_output = unityaction(jsonstr)
 
 # Uncomment to display full GetUserAuthentication output
@@ -93,6 +95,8 @@ unity_output = unityaction(jsonstr)
 
 print('Output from GetServerInfo: ')
 print(json.dumps(json.loads(unity_output), indent=4, separators=(',', ': ')))
+
+#End of Initialization
 
 ShowWand = 'Y'
 
