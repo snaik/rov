@@ -1,2 +1,2 @@
-MRN     LastName  FirstName Age    Gender  DateOfBirth Insurance   PhoneNumber     Address Email   NPI
-14986 :De Bernales          :Alannah       :Female     :           :               :505-266-76666  :96 Calle Nortena NE ::
+ID MRN ssn orgid lastname middlename firstname dateofbirth gender age AddressLine1 AddressLine2 City ZipCode State PhoneNumber HomePhone WorkPhone OtherNumber
+889:14986::3:De Bernales::Alannah::Female::96 Calle Nortena NE::Albuquerque:87111:NM:(505) 266-7666 (H):(505) 266-7666 (H)::

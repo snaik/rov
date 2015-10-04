@@ -106,6 +106,10 @@ def getSecurityToken(uc):
     print('Using Unity security token: ' + uc['security_token'])
 
 
+def uoutPrint(action, uout):
+    print('Output from ', action)
+    print(json.dumps(json.loads(uout), indent=4, separators=(',', ': ')))
+
 def authenticateEHR(uc):
    # Authenticate EHR user before calling other Magic actions
     initParams(PARAMS)
@@ -142,8 +146,7 @@ def initUnity(uc):
     getSecurityToken(uc)
     authenticateEHR(uc)
     getServerInfo(uc)
+    return uc
 
-initUnity(UC)
-
-
-
+def init():
+    return initUnity(UC)
