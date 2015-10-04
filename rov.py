@@ -94,3 +94,23 @@ unity_output = unityaction(jsonstr)
 print('Output from GetServerInfo: ')
 print(json.dumps(json.loads(unity_output), indent=4, separators=(',', ': ')))
 
+ShowWand = 'Y'
+
+# Call GetServerInfo Magic action; patient ID, Parameter1-6, and data not used
+jsonstr = buildjson('LastLogs', Appname, Ehr_username, '', token, '', 'Y', 10)
+unity_output = unityaction(jsonstr)
+
+print('Output from LastLogs: ')
+print(json.dumps(json.loads(unity_output), indent=4, separators=(',', ': ')))
+
+# Call GetServerInfo Magic action; patient ID, Parameter1-6, and data not used
+jsonstr = buildjson('GetClinicalSummary', Appname, Ehr_username, 889, token, 'Medications|Vitals', '', 'Y')
+unity_output = unityaction(jsonstr)
+print(json.dumps(json.loads(unity_output), indent=4, separators=(',', ': ')))
+
+jsonstr = buildjson('GetMedicationInfo', Appname, Ehr_username, '', token, 66149)
+unity_output = unityaction(jsonstr)
+print(json.dumps(json.loads(unity_output), indent=4, separators=(',', ': ')))
+
+
+
